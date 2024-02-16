@@ -7,13 +7,15 @@ public class Registro {
     public LocalDate fechaInicio;
     public LocalDate fechaFin;
     public LocalTime horaInicio;
-    public LocalDate horaFin;
+    public LocalTime horaFin;
     public long valor;
 
     //Atributos de relación
     public Cupo cupo; 
     public Carro carro;
     public Cliente cliente;
+    public Empleado empleado;
+
     
 
     // Constructores
@@ -22,7 +24,7 @@ public class Registro {
 
 
     public Registro(LocalDate fechaInicio, LocalDate fechaFin, LocalTime horaInicio, LocalTime horaFin, long valor,
-            Cupo cupo, Carro carro, Cliente cliente) {
+            Cupo cupo, Carro carro, Cliente cliente, Empleado empleado) {
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.horaInicio = horaInicio;
@@ -31,8 +33,12 @@ public class Registro {
         this.cupo = cupo;
         this.carro = carro;
         this.cliente = cliente;
+        this.empleado = empleado;
+       
     }
-    
+
+
+  
      
 
 }

@@ -6,6 +6,9 @@ import java.time.Month;
 import java.util.ArrayList;
 
 public class Main {
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         
         //crear carros con los constructores:
@@ -26,8 +29,12 @@ public class Main {
         cliente2.addCar("DEC 654", TipoVehiculo.CAMIONETA);
 
         //crear dos cupos
-        Cupo cupo1 = new Cupo(cupo:"A");
-        Cupo cupo2 = new Cupo(cupo:"B");
+        Cupo cupo1 = new Cupo('A');
+        Cupo cupo2 = new Cupo('B');
+
+        //crear empleados
+        Empleado empleado1 = new Empleado("Luis", "acd");
+        Empleado empleado2 = new Empleado("Hernan", "Add");
 
         //Crear dos registros E/S
         LocalDate fechaInicio = LocalDate.now();
@@ -51,8 +58,11 @@ public class Main {
                                             horaFin,
                                             5000,
                                             cupo1 ,
-                                            cliente1.misCarros.get(1),
-                                            cliente1);
+                                            cliente1.misCarros.get(0),
+                                            cliente1,
+                                            empleado2
+                                            
+                                        );
                                             
 
         Registro registro2 = new Registro( fechaInicio1 ,
@@ -61,11 +71,15 @@ public class Main {
                                             horaFin1,
                                             4000,
                                             cupo2 ,
-                                            cliente2.misCarros.get(2),
-                                            cliente2);
+                                            cliente2.misCarros.get(0),
+                                            cliente2,
+                                            empleado1
+                                           
+                                            );
 
         //Añadir a la lista
         misRegistros.add(registro1);
+        misRegistros.add(registro2);
         //
         System.out.println("Registros de E/S parking");
         for(Registro r : misRegistros){
@@ -76,13 +90,9 @@ public class Main {
                                 r.carro.tipoVehiculo + "|" +
                                 r.valor + "|" +
                                 r.fechaInicio + " " +
-                                r.horaInicio + "|"
-            );
+                                r.horaInicio + "|" +
+                                r.empleado.nombre + "|" 
+                                );
         }
-
-      
-
-
-
     }
 }
